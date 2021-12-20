@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { PetsModule } from './pets/pets.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    PetsModule
+    PetsModule,
+    OwnersModule
   ],
   controllers: [AppController],
   providers: [AppService],
